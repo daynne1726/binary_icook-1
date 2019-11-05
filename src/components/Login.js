@@ -27,7 +27,9 @@ class Login extends Component {
   )
   render() {
     return (
+      <div class = "container">
       <div class = "box"><this.LoginForm/></div>
+      </div>
     )
   }
 }

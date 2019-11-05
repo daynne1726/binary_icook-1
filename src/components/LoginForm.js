@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import { Button, Form, Grid} from 'semantic-ui-react'
 
-class Login extends Component {
+class LoginForm extends Component {
 
   LoginForm = () => (
     <Grid.Column>
@@ -26,10 +26,8 @@ class Login extends Component {
   )
   render() {
     return (
-      <div class = "container">
       <div class = "box"><this.LoginForm/></div>
-      </div>
     )
   }
 }
-export default Login
+export default LoginForm

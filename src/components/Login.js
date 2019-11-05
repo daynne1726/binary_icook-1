@@ -5,7 +5,6 @@ import { Button, Form, Grid} from 'semantic-ui-react'
 class Login extends Component {
 
   LoginForm = () => (
-
     <Grid.Column>
       <Form>
         <Form.Input

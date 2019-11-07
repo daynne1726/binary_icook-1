@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
 import '../App.css'
 import { Button, Form, Grid } from 'semantic-ui-react'
+import LoginForm from './LoginForm';
+import swal from 'sweetalert';
 
 class SignUp extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      fname:"",
-      lname:'',
+    this.state = {
+      fname: "",
+      lname: '',
+      gender: '',
+      email: '',
+      password: '',
+      verifypass: '',
+      sign: false,
     }
   }
 
@@ -19,6 +26,7 @@ class SignUp extends Component {
           iconPosition='left'
           label='First Name'
           placeholder='First Name'
+          onChange={e => this.setState({ fname: e.target.value })}
           required
         />
         <Form.Input
@@ -27,10 +35,11 @@ class SignUp extends Component {
           label='Last Name'
           placeholder='Last Name'
           required
+          onChange={e => this.setState({ lname: e.target.value })}
         />
         <label><b>Gender</b>
-          <select >  
-          <option value="Male">Male</option>
+          <select onChange={e => this.setState({ gender: e.target.value })}>
+            <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
         </label>
@@ -40,6 +49,7 @@ class SignUp extends Component {
           label='Email'
           type='email'
           required
+          onChange={e => this.setState({ email: e.target.value })}
         />
         <Form.Input
           icon='lock'
@@ -47,18 +57,47 @@ class SignUp extends Component {
           label='Password'
           type='password'
           required
+          onChange={e => this.setState({ password: e.target.value })}
         />
-        <Button content='Sign Up' primary />
+        <Form.Input
+          icon='lock'
+          iconPosition='left'
+          label='Verify Password'
+          type='password'
+          required
+          onChange={e => this.setState({ verifypass: e.target.value })}
+        />
+        <Button content='Sign Up' onClick={e => this.SignUpHandler(e)} primary />
       </Form>
     </Grid.Column>
   )
 
+  SignUpHandler = (e) => {
+    const { password, verifypass } = this.state;
+    if (password === verifypass) {
+      this.setState({ sign: true })
+      swal("Welcome!", "You are already signed in!", "success");
+      console.log(this.state.sign)
+    }
+    else{
+      swal("Oops!", "Password did not match!", "error");
+    }
+  }
+
   render() {
-    return (
-      <div className="boxsign">
-        <this.SignUpForm />
-      </div>
-    )
+    const { sign } = this.state
+    if (!sign) {
+      return (
+        <div className="boxsign">
+          <this.SignUpForm />
+        </div>
+      )
+    }
+    else {
+      return(
+      <LoginForm />
+      )
+    }
   }
 }
 export default SignUp;

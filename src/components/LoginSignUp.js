@@ -15,12 +15,22 @@ class LoginSignUp extends Component {
       login: false
     }
   }
+  handler=(e)=>{
+    const{signup}=this.state
+    if(signup){
+      this.setState({login:true})
+      console.log(this.state.login)
+    }
+  }
 
   signupHandler = (e) => {
     this.setState({ signup: true })
+    console.log(this.state.signup)
   }
   loginHandler = (e) => {
+    
     this.setState({ login: true })
+    console.log(this.state.login)
   }
 
   //this function is for the header  
@@ -50,6 +60,7 @@ class LoginSignUp extends Component {
             <Footer />
           </div>
         </div >
+        
       )
       // if the page is on Login page 
     } if (login) {

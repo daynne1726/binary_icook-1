@@ -12,27 +12,25 @@ class LoginForm extends Component {
   }
 
   LoginForm = () => (
+    <Grid.Column>
+      <Form>
+        <Form.Input
+          icon='user'
+          iconPosition='left'
+          label='Username'
+          placeholder='Username'
+          onChange={e => this.setState({ username: e.target.value })} />
 
-        <Grid.Column>
-          <Form>
-            <Form.Input
-              icon='user'
-              iconPosition='left'
-              label='Username'
-              placeholder='Username'
-              onChange={e => this.setState({ username: e.target.value })}/>
+        <Form.Input
+          icon='lock'
+          iconPosition='left'
+          label='Password'
+          type='password'
+          onChange={e => this.setState({ password: e.target.value })} />
 
-            <Form.Input
-              icon='lock'
-              iconPosition='left'
-              label='Password'
-              type='password'
-              onChange={e => this.setState({ password: e.target.value })}/>
-              
-            <Button content='Login' primary />
-          </Form>
-        </Grid.Column>
-
+        <Button content='Login' primary />
+      </Form>
+    </Grid.Column>
   )
   render() {
     return (

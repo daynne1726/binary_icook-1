@@ -20,16 +20,15 @@ class LoginForm extends Component {
               iconPosition='left'
               label='Username'
               placeholder='Username'
-              onChange={e => this.setState({ username: e.target.value })}
-            />
+              onChange={e => this.setState({ username: e.target.value })}/>
+
             <Form.Input
               icon='lock'
               iconPosition='left'
               label='Password'
               type='password'
-              onChange={e => this.setState({ password: e.target.value })}
-
-            />
+              onChange={e => this.setState({ password: e.target.value })}/>
+              
             <Button content='Login' primary />
           </Form>
         </Grid.Column>

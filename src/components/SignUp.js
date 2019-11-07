@@ -4,7 +4,7 @@ import { Button, Form, Grid} from 'semantic-ui-react'
 
 class SignUp extends Component {
 
-  LoginForm = () => (
+  SignUpForm = () => (
     <Grid.Column>
       <Form>
         <Form.Input
@@ -27,8 +27,8 @@ class SignUp extends Component {
 
     render(){
         return(
-            <div>
-                
+            <div className = "box">
+                <this.SignUpForm/>
             </div>
         )
     }

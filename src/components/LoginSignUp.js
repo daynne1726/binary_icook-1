@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 import '../App.css'
 import LoginForm from './LoginForm'
+import Header from './Header'
+import Footer from './Footer'
 
-class Login extends Component {
+class LoginSignUp extends Component {
   render() {
     return (
-      <div class = "container">
-      <LoginForm/>
+      <div>
+        <Header/>
+        <div>
+          <LoginForm />
+        </div>
+        <Footer />
       </div>
     )
   }
 }
-export default Login
+export default LoginSignUp

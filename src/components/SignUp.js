@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import '../App.css'
 import { Button, Form, Grid} from 'semantic-ui-react'
 
-class LoginForm extends Component {
+class SignUp extends Component {
 
   LoginForm = () => (
     <Grid.Column>
@@ -20,7 +20,7 @@ class LoginForm extends Component {
           type='password'
         />
 
-        <Button content='Login' primary />
+        <Button content='Sign Up' primary />
       </Form>
     </Grid.Column>
   )

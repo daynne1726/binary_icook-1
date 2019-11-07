@@ -27,6 +27,7 @@
   overflow: hidden;
   background-size: cover;
   background-image: url("./photos/food-background.jpg");
+  position: sticky;
 }
 input{
   width: 50%;
@@ -51,10 +52,13 @@ button{
   padding: 40px 100px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
   margin-top: 150px;
-  margin-left: 900px;
+  margin-right: 300px;
   border-radius:50px;
   height: 300px;
   width: 600px;	
+  position: sticky;
+  float:right;
+
 }
 h1{
   font-size: 2em;
@@ -65,4 +69,26 @@ h2{
   font-size: 2em;
   font-weight: bold;
   color: rgb(82, 5, 52)
+}
+nav{
+  font-size: 25px;
+	float:right;
+	margin-right: 0px;
+	padding: 5px;
+	margin-top:-20px;
+}
+.logo{
+  font-size: 25px;
+	float:left;
+	margin-right: 1210px;
+	padding: 5px;
+  margin-top:-38px;
+  height: 100px;
+  width: auto;
+}
+.header{
+  padding: 45px;
+  background-color: lawngreen;
+  position: sticky;
+  top: 0;
 }

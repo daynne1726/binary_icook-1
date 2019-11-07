@@ -8,34 +8,49 @@ import { Button } from 'semantic-ui-react'
 
 
 class LoginSignUp extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      login = false,
-      signup = false
+      login: false,
+      signup: false
     }
+  }
+
+  loginHandler = (e) => {
+    const{login} = this.state;
+    this.setState({login:true})
+  }
+  singupHandler = (e) => {
+    this.setState({signup: true})
   }
 
 
   render() {
-    return (
+    if (login) {
+      return (
+        <div>
+          <div className="header">
+            <nav>
+              <img className="logo" alt="joke" src={require('../photos/logo.png')} />
+              <Button color='blue' onClick={e => this.loginHandler(e)}>LogIn</Button> |
+              <Button color='red' onClick={e => this.singupHandler(e)}>SignUp</Button>
+            </nav>
+          </div>
+          <div>
+            <LoginForm />
+          </div>
+
+          <Footer />
+        </div>
+      )
+    } else {
       <div>
-        <div className="header">
-          <nav>
-            <img className="logo" alt="joke" src={require('../photos/logo.png')} />
-            <Button color='blue' onClick={this.setState.login = true}>LogIn</Button> |
-	          <Button color='red' onClick={this.routeSignUp}>SignUp</Button>
-          </nav>
-        </div>
-        <div>
-          <LoginForm />
-        </div>
-        <div>
-          <SignUp />
-        </div>
-        <Footer />
+        <SignUp />
       </div>
-    )
+
+    }
+
+
   }
 }
 export default LoginSignUp

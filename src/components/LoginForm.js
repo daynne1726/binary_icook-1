@@ -4,7 +4,6 @@ import { Button, Form, Grid } from 'semantic-ui-react'
 import swal from 'sweetalert';
 import Dashboard from './Dashboard';
 
-
 class LoginForm extends Component {
   constructor(props) {
     super(props);
@@ -17,18 +16,16 @@ class LoginForm extends Component {
       login: false
     }
   }
-
   LoginForm = () => (
     <Grid.Column>
       <Form>
         <Form.Input
           icon='user'
           iconPosition='left'
-          label='Username'
-          placeholder='Username'
+          label='Username/Email'
+          placeholder='Username/Email'
           onChange={e => this.setState({ username: e.target.value })}
            />
-
         <Form.Input
           icon='lock'
           iconPosition='left'
@@ -65,12 +62,7 @@ class LoginForm extends Component {
       return(
         <Dashboard/>
       )
-    }
-   
-       
-      
-
-    
+    }  
   }
 }
 export default LoginForm

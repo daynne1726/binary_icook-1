@@ -3,7 +3,8 @@ import '../App.css'
 import LoginForm from './LoginForm'
 import Footer from './Footer'
 import SignUp from './SignUp'
-import { Button,  } from 'semantic-ui-react'
+import { Button, } from 'semantic-ui-react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 
 // creating a class that will render either the class LoginForm or SignUp
@@ -15,78 +16,31 @@ class LoginSignUp extends Component {
       login: false
     }
   }
-  handler=(e)=>{
-    const{signup}=this.state
-    if(signup){
-      this.setState({login:true})
-      console.log(this.state.login)
-    }
-  }
-
-  signupHandler = (e) => {
-    this.setState({ signup: true })
-    console.log(this.state.signup)
-  }
-  loginHandler = (e) => {
-    
-    this.setState({ login: true })
-    console.log(this.state.login)
-  }
 
   //this function is for the header  
   Header = () => (
-    <div className="header">
-      <nav>
-       
+    <Router>
+      <div className="header">
+        <nav>
           {/* adding the image logo */}
           <img className="logo" alt="joke" src={require('../photos/logo.png')} />
-          <Button color='blue' onClick={e => this.signupHandler(e)}>Sign Up</Button> |
-          <Button color='red' onClick={e => this.loginHandler(e)}>Log In</Button> |
-       
+          <Link to={'/'}><Button color='red' >Log In</Button></Link> |
+          <Link to={'/signup'} ><Button color='blue' >Sign Up</Button></Link> |
       </nav>
-    </div>
+        <Switch>
+          <Route exact path='/' component={LoginForm} />
+          <Route path='/signup' component={SignUp} />
+        </Switch>
+      </div>
+    </Router>
   )
 
   render() {
-    // define the variables in constant
-    const { signup, login } = this.state;
-    // To display the Header And the class LoginForm 
-    if (!signup) {
-      return (
-        <div>
-          <this.Header />
-          <LoginForm />
-          <div>
-            <Footer />
-          </div>
-        </div >
-        
-      )
-      // if the page is on Login page 
-    } if (login) {
-      return (
-        <div>
-          <this.Header />
-          <LoginForm />
-          <div>
-            <Footer />
-          </div>
-        </div >
-      )
-    }
-    // display the class SignUp when button sign up clicked
-    else {
-      return (
-        <div>
-          <this.Header />
-          <SignUp />
-          <div>
-            <Footer />
-          </div>
-        </div>
-      )
 
-    }
+    // To display the Header And the class LoginForm 
+    return(
+      <this.Header/>
+    )
   }
 }
 

@@ -14,6 +14,7 @@ class SignUp extends Component {
       email: '',
       password: '',
       verifypass: '',
+      username:'',
       sign: false,
     }
   }
@@ -43,6 +44,14 @@ class SignUp extends Component {
             <option value="Female">Female</option>
           </select>
         </label>
+        <Form.Input
+          icon='user'
+          iconPosition='left'
+          label='Username'
+          placeholder='Username'
+          onChange={e => this.setState({ username: e.target.value })}
+          required
+        />
         <Form.Input
           icon='mail'
           iconPosition='left'

@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import LoginSignUp from './components/LoginSignUp'
 import './App.css';
-import { Header } from 'semantic-ui-react';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Header/>
-        <div className="container" >
-          <LoginSignUp />
-        </div>
+          <LoginSignUp/>
       </div>
     )
   }

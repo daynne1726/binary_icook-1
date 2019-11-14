@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import '../App.css'
 import { Button, Form, Grid } from 'semantic-ui-react'
 import swal from 'sweetalert';
-import Dashboard from './Dashboard';
+import UserFeed from './UserFeed';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -25,16 +26,20 @@ class LoginForm extends Component {
           label='Username/Email'
           placeholder='Username/Email'
           onChange={e => this.setState({ username: e.target.value })}
-           />
+        />
         <Form.Input
           icon='lock'
           iconPosition='left'
           label='Password'
           type='password'
           onChange={e => this.setState({ password: e.target.value })}
-          />
-
-        <Button content='Login' onClick={e => this.LoginHandler(e)} primary />
+        />
+        <Router>          
+            <Link to={'/userfeed'}><Button content='Login' onClick={e => this.LoginHandler(e)} primary /></Link>          
+            <Switch>
+              <Route exact path='/userfeed' component={UserFeed} />
+            </Switch>
+        </Router>    
       </Form>
     </Grid.Column>
   )
@@ -52,17 +57,17 @@ class LoginForm extends Component {
   }
 
   render() {
-    const{login}=this.state;
+    const { login } = this.state;
     if (!login) {
       return (
         <div className="box"><this.LoginForm />
         </div>
       )
-    }else{
-      return(
-        <Dashboard/>
+    } else {
+      return (      
+        <UserFeed />
       )
-    }  
+    }
   }
 }
 export default LoginForm

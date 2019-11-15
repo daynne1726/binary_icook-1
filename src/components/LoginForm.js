@@ -63,11 +63,7 @@ class LoginForm extends Component {
         <div className="box"><this.LoginForm />
         </div>
       )
-    } else {
-      return (      
-        <UserFeed />
-      )
-    }
+      }
   }
 }
 export default LoginForm

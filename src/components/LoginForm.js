@@ -4,6 +4,7 @@ import { Button, Form, Grid } from 'semantic-ui-react'
 import swal from 'sweetalert';
 import Dashboard from './Dashboard';
 
+
 class LoginForm extends Component {
   constructor(props) {
     super(props);

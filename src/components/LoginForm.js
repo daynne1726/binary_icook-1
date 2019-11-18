@@ -61,6 +61,7 @@ class LoginForm extends Component {
     if (!login) {
       return (
         <div className="box"><this.LoginForm />
+        
         </div>
       )
     } else {

@@ -8,7 +8,6 @@ class App extends Component {
     return (
       <div>
           <Header/>
-          <LoginForm login = {this.props.login}/>
       </div>
     )
   }

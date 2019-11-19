@@ -4,6 +4,7 @@ import { Button, Form, Grid } from 'semantic-ui-react'
 import swal from 'sweetalert';
 import UserFeed from './UserFeed';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import SignUp from './SignUp';
 
 
 class LoginForm extends Component {
@@ -12,7 +13,7 @@ class LoginForm extends Component {
     this.state = {
       username: '',
       password: '',
-      // for Log in,,, partial hard code ^_^
+      // for Log in,,, partial hard code
       uname: 'binary@gmail.com',
       pass: 'binary',
       login: false
@@ -37,8 +38,10 @@ class LoginForm extends Component {
         />
         <Router>          
             <Link to={'/userfeed'}><Button content='Login' onClick={e => this.LoginHandler(e)} primary /></Link>          
+            <Link to={'/signup'} ><Button color='blue' >Sign Up</Button></Link>
             <Switch>
-              <Route exact path='/userfeed' component={UserFeed} />
+              <Route exact path='/userfeed' component={UserFeed}/>
+              <Route path='/signup' component={SignUp} />
             </Switch>
         </Router>    
       </Form>
@@ -61,8 +64,7 @@ class LoginForm extends Component {
     const { login } = this.state;
     if (!login) {
       return (
-        <div className="box"><this.LoginForm />
-        
+        <div className="box"><this.LoginForm /> 
         </div>
       )
     } else {

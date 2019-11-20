@@ -3,6 +3,7 @@ import '../App.css'
 import { Button, Form, Grid } from 'semantic-ui-react'
 import LoginForm from './LoginForm';
 import swal from 'sweetalert';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class SignUp extends Component {
   constructor(props) {
@@ -104,7 +105,11 @@ class SignUp extends Component {
     }
     else {
       return(
-      <LoginForm />
+        <Router>
+        <Switch>
+          <Route exact path='/login' component={LoginForm} />
+        </Switch>
+    </Router>
       )
     }
   }

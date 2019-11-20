@@ -27,6 +27,9 @@ class Header extends Component {
         </Switch>
       </div>
     </Router>
+
+// creating a class that will render either the class LoginForm or SignUp
+
     )
   }
 }

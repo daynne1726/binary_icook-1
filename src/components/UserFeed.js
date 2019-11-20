@@ -6,27 +6,13 @@ import { Button, } from 'semantic-ui-react'
 class UserFeed extends Component {
 
 
-    Header = () => (
-        <Router>
-            <div className="header">
-                <nav>
-                    {/* adding the image logo */}
-                    <img className="logo" alt="joke" src={require('../photos/logo.png')} />
-
-                    <Link to={'/signup'} ><Button color='blue' >Sign Up</Button></Link>
-                </nav>
-                <Switch>
-
-                    <Route path='/signup' component={SignUp} />
-                </Switch>
-            </div>
-        </Router>
-    )
+    
 
     render() {
         return (
             <div className="containeruser">
-                <this.Header />
+                
+                
             </div>
         )
     }

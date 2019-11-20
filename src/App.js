@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import LoginSignUp from './components/LoginSignUp'
+import Header from './components/Header'
 import './App.css';
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
   render() {
     return (
-      <div>
-          <LoginSignUp/>
+      <div className="container">
+          <Header/>
       </div>
     )
   }

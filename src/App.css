@@ -8,6 +8,15 @@
   background-image: url("./photos/food-background.jpg");
   position: sticky;
 }
+.containeruser{
+  height: 100vh;
+  width: 100vw;
+  align-items: stretch;
+  overflow: hidden;
+  background-size: cover;
+  background-color: whitesmoke;
+  position: sticky;
+}
 
 .box{
   background-image:linear-gradient(rgb(255, 102, 0), orange);

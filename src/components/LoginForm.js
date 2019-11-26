@@ -5,6 +5,8 @@ import swal from 'sweetalert';
 import UserFeed from './UserFeed';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import SignUp from './SignUp';
+import Header from './Header';
+
 
 
 class LoginForm extends Component {
@@ -64,10 +66,20 @@ class LoginForm extends Component {
     const { login } = this.state;
     if (!login) {
       return (
-        <div className="box"><this.LoginForm /> 
+        <div className="container">
+          <Header/>
+          <div className = "box">
+          <this.LoginForm />
+          </div>
         </div>
       )
-      }
+    }
+    else {
+      return (
+        <UserFeed />
+      )
+    }
   }
 }
+
 export default LoginForm
